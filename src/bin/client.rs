@@ -19,7 +19,7 @@ lazy_static! {
 async fn main() {
     tracing_subscriber::fmt::init();
     let args: Vec<String> = std::env::args().collect();
-    let mut req = GetItemRequest { cmd: RedisCommand::Get, key: None, value: None };
+    let req = GetItemRequest;
     let cmd = args[1].to_lowercase();
     if cmd == String::from("get") {
         req = GetItemRequest{

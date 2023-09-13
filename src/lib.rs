@@ -45,12 +45,12 @@ impl volo_gen::volo::example::ItemService for S {
                 match self.dic_map.lock().unwrap().remove(&_req.key.unwrap().into_string())
                 {
                     Some(_) => Ok(GetItemResponse {
-                        flag: false,
+                        flag: true,
                         res: "None".into(),
                     }),
 
                     None => Ok(GetItemResponse {
-                        flag: true,
+                        flag: false,
                         res: "OK".into(),
                     }),
                 }
